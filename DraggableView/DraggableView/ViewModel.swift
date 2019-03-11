@@ -11,12 +11,19 @@ import Foundation
 enum CoordinatePosition {
     case left
     case right
+    case top
+    case bottom
 }
 
 class ViewModel {
     
-    func didEndDragging(_ lastX: Float, _ centerX: Float) -> CoordinatePosition {
-        if lastX <= centerX {
+    func didEndDragging(_ lastX: Float, _ lastY: Float, _ centerX: Float, _ centerY: Float) -> CoordinatePosition {
+        
+        if lastY <= centerY / 2 {
+            return .top
+        } else if lastY >= centerY + (centerY * 1 / 2) {
+            return .bottom
+        } else if lastX <= centerX {
             return .left
         } else {
             return .right
