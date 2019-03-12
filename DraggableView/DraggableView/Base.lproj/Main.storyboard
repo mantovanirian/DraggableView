@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ce-mS-zrh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ce-mS-zrh" customClass="DraggableVIew" customModule="DraggableView" customModuleProvider="target">
                                 <rect key="frame" x="137.5" y="293.5" width="100" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv8-c2-95G" userLabel="Drag Me">
@@ -36,9 +36,6 @@
                                     <constraint firstItem="Hv8-c2-95G" firstAttribute="centerY" secondItem="0Ce-mS-zrh" secondAttribute="centerY" id="Pfa-wh-q7X"/>
                                     <constraint firstAttribute="width" secondItem="0Ce-mS-zrh" secondAttribute="height" multiplier="1:1" id="VSb-p7-oby"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="xj8-Ya-NFi" appends="YES" id="nyZ-Ve-cLY"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,15 +46,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="greenView" destination="0Ce-mS-zrh" id="Q6T-yr-8xf"/>
+                        <outlet property="draggableView" destination="0Ce-mS-zrh" id="Pwh-nN-Wc8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="xj8-Ya-NFi">
-                    <connections>
-                        <action selector="dragged:" destination="BYZ-38-t0r" id="u4C-5K-Dxb"/>
-                    </connections>
-                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="xj8-Ya-NFi"/>
             </objects>
             <point key="canvasLocation" x="124" y="64"/>
         </scene>

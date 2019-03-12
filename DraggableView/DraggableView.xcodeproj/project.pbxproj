@@ -14,6 +14,7 @@
 		C92EC5BC2234CD9E0070F3A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EC5BA2234CD9E0070F3A8 /* LaunchScreen.storyboard */; };
 		C92EC5CA2234DB650070F3A8 /* DraggableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5C92234DB650070F3A8 /* DraggableViewTests.swift */; };
 		C92EC5D22234DDCF0070F3A8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */; };
+		C9DFB50922374D450009215B /* DraggableVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB50822374D450009215B /* DraggableVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C92EC5C92234DB650070F3A8 /* DraggableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableViewTests.swift; sourceTree = "<group>"; };
 		C92EC5CB2234DB650070F3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C9DFB50822374D450009215B /* DraggableVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				C92EC5BA2234CD9E0070F3A8 /* LaunchScreen.storyboard */,
 				C92EC5BD2234CD9E0070F3A8 /* Info.plist */,
 				C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */,
+				C9DFB50822374D450009215B /* DraggableVIew.swift */,
 			);
 			path = DraggableView;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			files = (
 				C92EC5B42234CD9D0070F3A8 /* ViewController.swift in Sources */,
 				C92EC5D22234DDCF0070F3A8 /* ViewModel.swift in Sources */,
+				C9DFB50922374D450009215B /* DraggableVIew.swift in Sources */,
 				C92EC5B22234CD9D0070F3A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
