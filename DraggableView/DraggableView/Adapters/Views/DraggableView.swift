@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DraggableVIew: UIView {
+class DraggableView: UIView {
     private var panRecognizer: UIPanGestureRecognizer!
     private let viewModel = ViewModel()
     
@@ -43,10 +43,10 @@ class DraggableVIew: UIView {
             return
             
         }
-        let coordinatePosition = viewModel.didEndDragging(Float(center.x),
-                                                          Float(center.y),
-                                                          Float(superview.center.x),
-                                                          Float(superview.center.y))
+        let centerPoint = Point.create(from: superview.center)
+        let lastPoint = Point.create(from: center)
+        let coordinatePosition = viewModel.didEndDragging(lastPoint,
+                                                          centerPoint)
         
         animate(coordinatePosition)
     }

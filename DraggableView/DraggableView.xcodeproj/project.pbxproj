@@ -12,9 +12,11 @@
 		C92EC5B72234CD9D0070F3A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EC5B52234CD9D0070F3A8 /* Main.storyboard */; };
 		C92EC5B92234CD9E0070F3A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92EC5B82234CD9E0070F3A8 /* Assets.xcassets */; };
 		C92EC5BC2234CD9E0070F3A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EC5BA2234CD9E0070F3A8 /* LaunchScreen.storyboard */; };
-		C92EC5CA2234DB650070F3A8 /* DraggableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5C92234DB650070F3A8 /* DraggableViewTests.swift */; };
+		C92EC5CA2234DB650070F3A8 /* ViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5C92234DB650070F3A8 /* ViewModelTest.swift */; };
 		C92EC5D22234DDCF0070F3A8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */; };
-		C9DFB50922374D450009215B /* DraggableVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB50822374D450009215B /* DraggableVIew.swift */; };
+		C9DFB50B2238D3750009215B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB50A2238D3750009215B /* Point.swift */; };
+		C9DFB5132238D48C0009215B /* PointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB5122238D48C0009215B /* PointTest.swift */; };
+		C9DFB5192238DBCD0009215B /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB5182238DBCD0009215B /* DraggableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,12 @@
 		C92EC5BB2234CD9E0070F3A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C92EC5BD2234CD9E0070F3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92EC5C72234DB650070F3A8 /* DraggableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DraggableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C92EC5C92234DB650070F3A8 /* DraggableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableViewTests.swift; sourceTree = "<group>"; };
+		C92EC5C92234DB650070F3A8 /* ViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTest.swift; sourceTree = "<group>"; };
 		C92EC5CB2234DB650070F3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		C9DFB50822374D450009215B /* DraggableVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableVIew.swift; sourceTree = "<group>"; };
+		C9DFB50A2238D3750009215B /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		C9DFB5122238D48C0009215B /* PointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTest.swift; sourceTree = "<group>"; };
+		C9DFB5182238DBCD0009215B /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +85,14 @@
 		C92EC5B02234CD9D0070F3A8 /* DraggableView */ = {
 			isa = PBXGroup;
 			children = (
+				C9DFB50E2238D39A0009215B /* Adapters */,
+				C9DFB50D2238D38D0009215B /* ViewModels */,
+				C9DFB50C2238D37A0009215B /* Entities */,
 				C92EC5B12234CD9D0070F3A8 /* AppDelegate.swift */,
-				C92EC5B32234CD9D0070F3A8 /* ViewController.swift */,
 				C92EC5B52234CD9D0070F3A8 /* Main.storyboard */,
 				C92EC5B82234CD9E0070F3A8 /* Assets.xcassets */,
 				C92EC5BA2234CD9E0070F3A8 /* LaunchScreen.storyboard */,
 				C92EC5BD2234CD9E0070F3A8 /* Info.plist */,
-				C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */,
-				C9DFB50822374D450009215B /* DraggableVIew.swift */,
 			);
 			path = DraggableView;
 			sourceTree = "<group>";
@@ -96,10 +100,60 @@
 		C92EC5C82234DB650070F3A8 /* DraggableViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				C92EC5C92234DB650070F3A8 /* DraggableViewTests.swift */,
+				C9DFB5112238D47B0009215B /* EntitiesTest */,
+				C9DFB5102238D4530009215B /* ViewModelTests */,
 				C92EC5CB2234DB650070F3A8 /* Info.plist */,
 			);
 			path = DraggableViewTests;
+			sourceTree = "<group>";
+		};
+		C9DFB50C2238D37A0009215B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C9DFB50A2238D3750009215B /* Point.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C9DFB50D2238D38D0009215B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */,
+				C92EC5B32234CD9D0070F3A8 /* ViewController.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C9DFB50E2238D39A0009215B /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				C9DFB50F2238D3A10009215B /* Views */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		C9DFB50F2238D3A10009215B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9DFB5182238DBCD0009215B /* DraggableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9DFB5102238D4530009215B /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				C92EC5C92234DB650070F3A8 /* ViewModelTest.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		C9DFB5112238D47B0009215B /* EntitiesTest */ = {
+			isa = PBXGroup;
+			children = (
+				C9DFB5122238D48C0009215B /* PointTest.swift */,
+			);
+			path = EntitiesTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92EC5B42234CD9D0070F3A8 /* ViewController.swift in Sources */,
+				C9DFB50B2238D3750009215B /* Point.swift in Sources */,
 				C92EC5D22234DDCF0070F3A8 /* ViewModel.swift in Sources */,
-				C9DFB50922374D450009215B /* DraggableVIew.swift in Sources */,
+				C9DFB5192238DBCD0009215B /* DraggableView.swift in Sources */,
 				C92EC5B22234CD9D0070F3A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,7 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92EC5CA2234DB650070F3A8 /* DraggableViewTests.swift in Sources */,
+				C9DFB5132238D48C0009215B /* PointTest.swift in Sources */,
+				C92EC5CA2234DB650070F3A8 /* ViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

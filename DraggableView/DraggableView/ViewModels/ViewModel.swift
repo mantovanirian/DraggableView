@@ -17,13 +17,13 @@ enum CoordinatePosition {
 
 class ViewModel {
     
-    func didEndDragging(_ lastX: Float, _ lastY: Float, _ centerX: Float, _ centerY: Float) -> CoordinatePosition {
+    func didEndDragging(_ lastPoint: Point, _ centerPoint: Point) -> CoordinatePosition {
         
-        if lastY <= centerY / 2 {
+        if lastPoint.y <= centerPoint.y / 2 {
             return .top
-        } else if lastY >= centerY + (centerY * 1 / 2) {
+        } else if lastPoint.y >= centerPoint.y + (centerPoint.y * 1 / 2) {
             return .bottom
-        } else if lastX <= centerX {
+        } else if lastPoint.x <= centerPoint.x {
             return .left
         } else {
             return .right

@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var draggableView: DraggableVIew!
+    @IBOutlet weak var draggableView: DraggableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

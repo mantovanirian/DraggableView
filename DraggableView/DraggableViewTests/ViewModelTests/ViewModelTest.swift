@@ -9,8 +9,8 @@
 import XCTest
 @testable import DraggableView
 
-class DraggableViewTests: XCTestCase {
-
+class ViewModelTest: XCTestCase {
+    
     func testViewSnappedToLeft() {
         let vm = ViewModel()
         let lastX: Float = 100.0
@@ -18,8 +18,11 @@ class DraggableViewTests: XCTestCase {
         let centerX: Float = 100.0
         let centerY: Float = 100.0
         
-        let snapped = vm.didEndDragging(lastX, lastY,
-                                        centerX, centerY)
+        let lastPoint = Point(x: lastX, y: lastY)
+        let centerPoint = Point(x: centerX, y: centerY)
+        
+        let snapped = vm.didEndDragging(lastPoint,
+                                        centerPoint)
         
         XCTAssertEqual(snapped, .left)
     }
@@ -31,7 +34,10 @@ class DraggableViewTests: XCTestCase {
         let centerX: Float = 100.0
         let centerY: Float = 100.0
         
-        let snapped = vm.didEndDragging(lastX, lastY, centerX, centerY)
+        let lastPoint = Point(x: lastX, y: lastY)
+        let centerPoint = Point(x: centerX, y: centerY)
+        
+        let snapped = vm.didEndDragging(lastPoint, centerPoint)
         
         XCTAssertEqual(snapped, .right)
     }
@@ -43,7 +49,10 @@ class DraggableViewTests: XCTestCase {
         let centerX: Float = 100.0
         let centerY: Float = 100.0
         
-        let snapped = vm.didEndDragging(lastX, lastY, centerX, centerY)
+        let lastPoint = Point(x: lastX, y: lastY)
+        let centerPoint = Point(x: centerX, y: centerY)
+        
+        let snapped = vm.didEndDragging(lastPoint, centerPoint)
         
         XCTAssertEqual(snapped, .top)
     }
@@ -55,7 +64,10 @@ class DraggableViewTests: XCTestCase {
         let centerX: Float = 100.0
         let centerY: Float = 100.0
         
-        let snapped = vm.didEndDragging(lastX, lastY, centerX, centerY)
+        let lastPoint = Point(x: lastX, y: lastY)
+        let centerPoint = Point(x: centerX, y: centerY)
+        
+        let snapped = vm.didEndDragging(lastPoint, centerPoint)
         
         XCTAssertEqual(snapped, .bottom)
     }
