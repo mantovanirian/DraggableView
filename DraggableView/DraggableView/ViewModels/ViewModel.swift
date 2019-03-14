@@ -16,12 +16,29 @@ enum CoordinatePosition {
 }
 
 class ViewModel {
+    typealias VerticalDivider = NotZero
+    let verticalDivider: Float
     
+    init(verticalDivider: Float) {
+        self.verticalDivider = verticalDivider
+    }
     func didEndDragging(_ lastPoint: Point, _ centerPoint: Point) -> CoordinatePosition {
-        
-        if lastPoint.y <= centerPoint.y / 2 {
+        guard let verticalDivider = VerticalDivider(value: verticalDivider) else { return useVerticalEdgeOnly(lastPoint, centerPoint) }
+        return useAllEdge(lastPoint, centerPoint, verticalDivider: verticalDivider)
+    }
+    
+    private func useVerticalEdgeOnly(_ lastPoint: Point, _ centerPoint: Point) -> CoordinatePosition {
+        if lastPoint.x <= centerPoint.x {
+            return .left
+        } else {
+            return .right
+        }
+    }
+    
+    private func useAllEdge(_ lastPoint: Point, _ centerPoint: Point, verticalDivider: VerticalDivider) -> CoordinatePosition {
+        if lastPoint.y <= centerPoint.y / verticalDivider.value {
             return .top
-        } else if lastPoint.y >= centerPoint.y + (centerPoint.y * 1 / 2) {
+        } else if lastPoint.y >= centerPoint.y + (centerPoint.y * 1 / verticalDivider.value) {
             return .bottom
         } else if lastPoint.x <= centerPoint.x {
             return .left

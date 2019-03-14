@@ -14,6 +14,8 @@
 		C92EC5BC2234CD9E0070F3A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EC5BA2234CD9E0070F3A8 /* LaunchScreen.storyboard */; };
 		C92EC5CA2234DB650070F3A8 /* ViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5C92234DB650070F3A8 /* ViewModelTest.swift */; };
 		C92EC5D22234DDCF0070F3A8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */; };
+		C9DDE588223ABF0000AA8348 /* NotZeroTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DDE587223ABF0000AA8348 /* NotZeroTest.swift */; };
+		C9DDE58A223AC0B600AA8348 /* NotZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DDE589223AC0B600AA8348 /* NotZero.swift */; };
 		C9DFB50B2238D3750009215B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB50A2238D3750009215B /* Point.swift */; };
 		C9DFB5132238D48C0009215B /* PointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB5122238D48C0009215B /* PointTest.swift */; };
 		C9DFB5192238DBCD0009215B /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFB5182238DBCD0009215B /* DraggableView.swift */; };
@@ -41,6 +43,8 @@
 		C92EC5C92234DB650070F3A8 /* ViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTest.swift; sourceTree = "<group>"; };
 		C92EC5CB2234DB650070F3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92EC5D12234DDCF0070F3A8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C9DDE587223ABF0000AA8348 /* NotZeroTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotZeroTest.swift; sourceTree = "<group>"; };
+		C9DDE589223AC0B600AA8348 /* NotZero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotZero.swift; sourceTree = "<group>"; };
 		C9DFB50A2238D3750009215B /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		C9DFB5122238D48C0009215B /* PointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTest.swift; sourceTree = "<group>"; };
 		C9DFB5182238DBCD0009215B /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DFB50A2238D3750009215B /* Point.swift */,
+				C9DDE589223AC0B600AA8348 /* NotZero.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DFB5122238D48C0009215B /* PointTest.swift */,
+				C9DDE587223ABF0000AA8348 /* NotZeroTest.swift */,
 			);
 			path = EntitiesTest;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				C92EC5B42234CD9D0070F3A8 /* ViewController.swift in Sources */,
 				C9DFB50B2238D3750009215B /* Point.swift in Sources */,
 				C92EC5D22234DDCF0070F3A8 /* ViewModel.swift in Sources */,
+				C9DDE58A223AC0B600AA8348 /* NotZero.swift in Sources */,
 				C9DFB5192238DBCD0009215B /* DraggableView.swift in Sources */,
 				C92EC5B22234CD9D0070F3A8 /* AppDelegate.swift in Sources */,
 			);
@@ -269,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DDE588223ABF0000AA8348 /* NotZeroTest.swift in Sources */,
 				C9DFB5132238D48C0009215B /* PointTest.swift in Sources */,
 				C92EC5CA2234DB650070F3A8 /* ViewModelTest.swift in Sources */,
 			);

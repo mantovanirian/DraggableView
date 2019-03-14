@@ -9,17 +9,28 @@
 import UIKit
 
 class DraggableView: UIView {
+    
+    @IBInspectable var verticalDivider: Float = 0 {
+        didSet {
+            viewModel = ViewModel(verticalDivider: verticalDivider)
+        }
+    }
+    
     private var panRecognizer: UIPanGestureRecognizer!
-    private let viewModel = ViewModel()
+    private var viewModel: ViewModel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupPanGetureRecognizer()
+        viewModel = ViewModel(verticalDivider: verticalDivider)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupPanGetureRecognizer()
+        viewModel = ViewModel(verticalDivider: verticalDivider)
+
     }
     
     func setupPanGetureRecognizer() {
