@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DraggableView: UIView {
+public class DraggableView: UIView {
     
     @IBInspectable var verticalDivider: Float = 0 {
         didSet {

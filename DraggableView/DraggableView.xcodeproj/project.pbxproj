@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		C947FC6D223D5C51004DE60C /* DraggableUIView */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C947FC70223D5C51004DE60C /* Build configuration list for PBXAggregateTarget "DraggableUIView" */;
+			buildPhases = (
+				C947FC71223D5CAC004DE60C /* Run Script */,
+			);
+			dependencies = (
+			);
+			name = DraggableUIView;
+			productName = DraggableUIView;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		C92EC5B22234CD9D0070F3A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5B12234CD9D0070F3A8 /* AppDelegate.swift */; };
 		C92EC5B42234CD9D0070F3A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EC5B32234CD9D0070F3A8 /* ViewController.swift */; };
@@ -253,6 +267,9 @@
 		C92EC5A62234CD9D0070F3A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Rian Putra Mantovani";
@@ -263,6 +280,9 @@
 					C92EC5C62234DB650070F3A8 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = C92EC5AD2234CD9D0070F3A8;
+					};
+					C947FC6D223D5C51004DE60C = {
+						CreatedOnToolsVersion = 10.1;
 					};
 					C9F7CF04223BEEBD00D749B5 = {
 						CreatedOnToolsVersion = 10.1;
@@ -286,6 +306,7 @@
 				C92EC5AD2234CD9D0070F3A8 /* DraggableView */,
 				C92EC5C62234DB650070F3A8 /* DraggableViewTests */,
 				C9F7CF04223BEEBD00D749B5 /* DraggableViewUITests */,
+				C947FC6D223D5C51004DE60C /* DraggableUIView */,
 			);
 		};
 /* End PBXProject section */
@@ -316,6 +337,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C947FC71223D5CAC004DE60C /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\nopen \"${PROJECT_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C92EC5AA2234CD9D0070F3A8 /* Sources */ = {
@@ -505,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72643Q8GHL;
+				DEVELOPMENT_TEAM = W4FS24WCW2;
 				INFOPLIST_FILE = DraggableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,7 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72643Q8GHL;
+				DEVELOPMENT_TEAM = W4FS24WCW2;
 				INFOPLIST_FILE = DraggableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -573,6 +615,24 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DraggableView.app/DraggableView";
+			};
+			name = Release;
+		};
+		C947FC6E223D5C51004DE60C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72643Q8GHL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C947FC6F223D5C51004DE60C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 72643Q8GHL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -640,6 +700,15 @@
 			buildConfigurations = (
 				C92EC5CF2234DB650070F3A8 /* Debug */,
 				C92EC5D02234DB650070F3A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C947FC70223D5C51004DE60C /* Build configuration list for PBXAggregateTarget "DraggableUIView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C947FC6E223D5C51004DE60C /* Debug */,
+				C947FC6F223D5C51004DE60C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
